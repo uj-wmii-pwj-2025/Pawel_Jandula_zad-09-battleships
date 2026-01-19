@@ -29,7 +29,7 @@ public class Main {
             String[] parts = raw.split(";");
             String cmd = parts[0];
             
-            // Rejestrujemy wynik poprzedniego strzału (pomijamy 'start')
+            
             if (!currentMyShot.isEmpty() && !cmd.equals("start")) {
                 board.recordMyShot(currentMyShot, cmd);
             }
@@ -37,7 +37,7 @@ public class Main {
             if (cmd.equals("ostatni zatopiony")) {
                 System.out.println("Wygrana");
                 System.out.println();
-                board.printOpponentBoard(true); // Poprawione: argument boolean
+                board.printOpponentBoard(true); 
                 System.out.println();
                 board.printMyBoard();
                 break;
@@ -50,7 +50,7 @@ public class Main {
                 net.sendMessage(response, "");
                 System.out.println("Przegrana");
                 System.out.println();
-                board.printOpponentBoard(false); // Poprawione: argument boolean
+                board.printOpponentBoard(false); 
                 System.out.println();
                 board.printMyBoard();
                 break;
